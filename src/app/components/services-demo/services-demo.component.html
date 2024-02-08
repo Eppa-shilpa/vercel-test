@@ -1,0 +1,6 @@
+<div>
+    <button (click)="addEmp()">Add Employee</button>
+    <ul>
+        <li *ngFor="let emp of employeeArray">{{emp.name}} {{emp.role}}</li>
+    </ul>
+</div>

@@ -1,0 +1,33 @@
+<div class="formArea">
+    <div class="form">
+        <h1>User Details</h1>
+        <input type="text" placeholder="Name" [(ngModel)]="userName"> <br><br>
+        <input type="text" placeholder="E-Mail" [(ngModel)]="userEmail"> <br><br>
+        <textarea cols="30" rows="10" placeholder="Address" [(ngModel)]="userAddress"></textarea><br> <br>
+        <button (click)="AddData()">Save Data</button>
+    </div>
+    <div *ngIf="data.length>0;else emptyData">
+        <div class="previewDetails">
+            <table>
+                <thead>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>E-Mail</th>
+                    <th>Address</th>
+                    <th>Action</th>
+                </thead>
+
+                <tr *ngFor="let obj of data;let i =index ">
+                    <td>{{obj.index}}</td>
+                    <td>{{obj.name}}</td>
+                    <td>{{obj.mail}}</td>
+                    <td>{{obj.address}}</td>
+                    <td><button (click)="RemoveUser(i)">Delete</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <ng-template #emptyData>
+        <p>No data to display</p>
+    </ng-template>
+</div>

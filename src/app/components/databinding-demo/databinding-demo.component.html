@@ -1,0 +1,13 @@
+<div class="form-area">
+    <input type="text" placeholder="post title" [(ngModel)]="title"/> <br><br>
+    <textarea  cols="30" rows="10" placeholder="Post Details" [(ngModel)]="details"></textarea><br><br>
+    <input type="text" placeholder="post Image Url" [(ngModel)]="imageUrl"><br><br>
+    <input type="text" placeholder="post  Url" [(ngModel)]="url"><br><br>
+    <input type="checkbox" [(ngModel)]="isChecked"> Add Background
+</div>
+<div class="preview-area">
+ <h2> <span [class.add-background]="isChecked">{{title}}</span></h2>
+ <p>{{details}}</p>
+ <img [src]="imageUrl" alt="image" [style.display]="imageUrl?'block':'none'">
+ <a [href]="url" target="_blank" [style.display]="url?'block':'none'">click here</a>
+</div>

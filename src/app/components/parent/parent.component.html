@@ -1,0 +1,10 @@
+<div>
+    <p>parent works!</p>
+    <b>{{childMessage}}</b>
+    <h2>{{inMessage}}</h2>
+    <!-- <input type="text" (keyup.enter)="handleKeyUp($event)"> -->
+    <!-- template variables -->
+    <label>Enter your name</label> <br>   
+    <input type="text" [(ngModel)]="userName" (keyup)="handleName()" >
+    <app-child [inputData]="parentmessage" (messageEvent)="getDataFromChild($event)"></app-child>
+</div>
